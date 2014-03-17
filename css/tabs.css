@@ -1,0 +1,17 @@
+html{ font-size:62.5%; font-family: "Arial","新細明體";}
+
+/* Generic Utility */
+.hide { position: absolute; top: -9999px; left: -9999px; }
+
+
+/* Banner 5tabs */
+#tabs {  position:relative; width:100%;}
+#tabs ul.nav { margin:0 auto; height:50px; background:#CCC;}
+#tabs .nav li a {  display:inline-block; float:left; text-align:left; color:#fff; font-size:1.5rem; width:128px; padding-left:35px; /*height:34px; padding-top:16px;*/}
+#tabs .nav li b{ font-weight:normal; font-size:12px;}
+#tabs .nav li.last { margin-right: 0; };
+#tabs li a.current{ color:#2e2e2e; position:relative; font-weight:bold; background: url(../images/icon_arrow_down.png) 10px 16px no-repeat #f03182!important;}
+.account{ background: url(../images/icon_arrow_right.png) 10px 16px no-repeat #c01010!important; padding-top:17px; height:33px;}
+.idnumber{ background: url(../images/icon_arrow_right.png) 10px 16px no-repeat #222!important; padding-top:9px; height:41px;}
+#account{ background:#c01010; height:50px; padding-top:20px; }
+#idnumber{ background:#222; height:50px; padding-top:20px;}

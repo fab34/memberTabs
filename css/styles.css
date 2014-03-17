@@ -1,0 +1,111 @@
+#loginArea{
+	width: 326px;
+	padding:15px;
+	background: none repeat scroll 0 0 #F1F0F0;
+	margin: 0 auto 0;
+	color: #4D4D4D;
+	font-size: 12px;
+}
+#newlogin {	
+	margin:0 auto;
+	padding-top:10px;
+	width:100%;
+	background:#FFF;
+}
+.loginblock {
+	width: 249px;
+	margin: 0 auto;
+}
+.loginblock2 {
+	width: 326px;
+	margin: 0 auto;
+}
+.loginblock2 h3 { padding:10px 5px; width:316px; }
+#fugologinbtn {
+	background: none repeat scroll 0 0 #4d4d4d;
+	border: 1px solid rgb(204, 204, 204);
+	border-radius: 4px 4px 4px 4px;
+	color: #fff;
+	cursor: pointer;
+	font-family: "微軟正黑體","新細明體",sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	margin: 15px 5px 10px 19px;
+	padding: 8px 0 9px;
+	text-align: center;
+	text-shadow: 0 1px 0 #000;
+	width: 164px;
+}
+.newbasicInput {
+	padding: 5px;
+	font-size: 14px;
+	font-family: 微軟正黑體,新細明體,Arial,Helvetica,sans-serif;
+	display: block;
+	margin: 0 auto;
+	border: 1px solid #c0c2c7;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: #606060;
+	margin-bottom: 10px;
+	-moz-box-shadow: inset 0 1px 3px -1px #b4b1b1;
+	-webkit-box-shadow: inset 0 1px 3px -1px #b4b1b1;
+	box-shadow: inset 0 1px 3px -1px #b4b1b1;
+}
+.newbasicInput2 {
+	padding: 5px;
+	font-size: 14px;
+	font-family: 微軟正黑體,新細明體,Arial,Helvetica,sans-serif;
+	margin: 5px 0 10px;
+	border: 1px solid #c0c2c7;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: #606060;
+	-moz-box-shadow: inset 0 1px 3px -1px #b4b1b1;
+	-webkit-box-shadow: inset 0 1px 3px -1px #b4b1b1;
+	box-shadow: inset 0 1px 3px -1px #b4b1b1;
+}
+
+#loginbtn {
+	background: none repeat scroll 0 0 #4d4d4d;
+	border: 1px solid rgb(204, 204, 204);
+	border-radius: 4px 4px 4px 4px;
+	color: #fff;
+	cursor: pointer;
+	font-family: "微軟正黑體","新細明體",sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	margin: 15px 5px 10px 26px;
+	padding: 8px 0 9px;
+	text-align: center;
+	text-shadow: 0 1px 0 #000;
+	width: 102px;
+}
+#fugologinbtn {
+	background: none repeat scroll 0 0 #4d4d4d;
+	border: 1px solid rgb(204, 204, 204);
+	border-radius: 4px 4px 4px 4px;
+	color: #fff;
+	cursor: pointer;
+	font-family: "微軟正黑體","新細明體",sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	margin: 15px 5px 10px 0;
+	padding: 8px 0 9px;
+	text-align: center;
+	text-shadow: 0 1px 0 #000;
+	width: 164px;
+}
+#facebooklogin {
+	text-align: center;
+}
+#rigtdiv {
+	float: right;
+}
+#forgetpwdd {
+	color: #4D4D4D;
+}
+#CheckPWDIMG {
+	margin-left: 14px;
+}

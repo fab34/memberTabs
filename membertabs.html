@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+<link href="css/reset.css" type="text/css" rel="stylesheet" />
+<link href="css/styles.css" type="text/css" rel="stylesheet" />
+<link href="css/tabs.css" type="text/css" rel="stylesheet" />
+
+<!-----JS----->
+<script type="text/javascript" src="js/jquery.js"></script>
+<!--TABS-->
+<script src="js/organictabs.jquery.js"></script>
+<script>
+$(function() {   
+	$("#tabs").organicTabs({
+		"speed": 0
+	});
+});
+</script>
+
+
+<script type="text/javascript">
+			
+				
+				var registerurl=location.href;
+				var RurlIndex = registerurl.split("Rurl=");
+				function check()
+				{
+					document.loginmembernew.Mode=document.getElementById('Mode').value;
+					document.loginmembernew.Login=document.getElementById('Login').value;
+					document.loginmembernew.Password=document.getElementById('Password').value;
+					document.loginmembernew.EncryptKey=document.getElementById('EncryptKey').value;
+					document.loginmembernew.origurl=document.getElementById('origurl').value;
+					document.loginmembernew.orihash=document.getElementById('orihash').value;
+					document.loginmembernew.CheckPwd=document.getElementById('CheckPwd').value;
+					//document.loginmembernew.orihash=document.getElementById('orihash').value;
+					alert(document.loginmembernew.Mode);
+					alert(document.loginmembernew.Login);
+					document.loginmembernew.submit();
+				}
+				
+
+				function LoginToRegister()
+				{
+				
+					location='newregister.aspx?Rurl='+RurlIndex[1];
+				}
+				function fgtpwd()
+				{
+					location='E68_ForgetPwd.aspx?Rurl='+RurlIndex[1];
+				}
+			
+				if(""=='驗證圖碼輸入錯誤')
+				{
+					document.getElementById('ErrorTable').innerHTML='驗證圖碼輸入錯誤';
+					document.getElementById('ErrorTable').style.color="#B10101";
+					document.getElementById('ErrorTable').style.visibility="visible";
+				}
+				if(""=='密碼錯誤')
+				{
+					document.getElementById('accounterror').innerHTML='帳號或密碼錯誤';
+					document.getElementById('accounterror').style.color="#B10101";
+					document.getElementById('accounterror').style.visibility="visible";
+				}
+				if(""=='帳號錯誤')
+				{
+					document.getElementById('accounterror').innerHTML='帳號或密碼錯誤';
+					document.getElementById('accounterror').style.color="#B10101";
+					document.getElementById('accounterror').style.visibility="visible";
+				}
+			
+				function clearvaluelogin()
+				{
+					if(document.getElementById('Login').value=="帳號/身分證字號")
+					{
+						document.getElementById('Login').value="";
+					}
+				}
+				function clearvalueCheckPwd()
+				{
+					if(document.getElementById('CheckPwd').value=="驗證圖碼")
+					{
+						document.getElementById('CheckPwd').value="";
+					}
+				}
+				function returnvaluelogin()
+				{
+					if(document.getElementById('Login').value=="")
+					{
+						document.getElementById('Login').value="帳號/身分證字號";
+					}
+				}
+				function returnvaluechkpwd()
+				{
+					if(document.getElementById('CheckPwd').value=="")
+					{
+						document.getElementById('CheckPwd').value="驗證圖碼";
+					}
+				}
+				
+			
+				function changepwd()
+				{
+					document.getElementById('Passwordshow').style.display="none";
+				
+					document.getElementById('Password').style.display="block";
+					document.getElementById('Password').focus()
+					
+				}
+				
+				
+				function showpwd()
+				{
+					if(document.getElementById('Password').value=="")
+					{
+						document.getElementById('Password').style.display="none";
+						document.getElementById('Passwordshow').style.display="block";
+					}
+				}
+					
+				var NewArray = location.href.split("Rurl=");
+			
+			
+				function cross()
+				{
+					window.parent.location.href='fbidconfirm.aspx?Rurl='+RurlIndex[1];
+				}
+			
+				function close()
+				{
+
+					var LoginRrlNew=unescape(unescape(location.href));
+					var NewArray = LoginRrlNew.split("Rurl=");
+					var Rurlsplit=NewArray[1].split("&target=");
+									
+					if(location.href.indexOf('target')>0)
+					{
+						window.parent.location.href=Rurlsplit[1];
+					}
+					else 
+					{
+						window.parent.location.href=Rurlsplit[0];
+					}
+				//	window.parent.location.href=unescape(unescape(NewArray[1]));
+				}
+		
+                document.loginmembernew.EncryptKey.value = E68_HeaderBagEncryptKey;
+			   
+                String.prototype.trim=function()
+                {
+                  return(this.split(/(^\s+|\s+$)/g)[0]);
+                }
+				
+				function Login()
+				{       
+					 //dcsMultiTrack('DCS.dcsuri','Login.aspx','DCSext.PH','R6TopNavi_MemberSignIn');
+					 var ParentUrl;
+					 if(location.href.indexOf('Rurl=') != -1)
+					 {
+						ParentUrl = location.href.split('Rurl=')[1];
+					 }
+					 else
+					 {
+						ParentUrl = 'home.aspx'
+					 }
+					  
+					 if (ParentUrl.indexOf("PRODUCTPAGE") != -1)
+					 {
+					   ParentUrl = ParentUrl.replace("PRODUCTPAGE","ProductPage") ;	   
+					 }
+					 
+                     
+                    var getCheckRadio;
+                    for(var i=0, j=document.loginmembernew.Mode.length; i<j; i++)
+                    {
+                        if(document.loginmembernew.Mode[i].checked)
+                        {
+                            //getCheckRadio = document.loginmembernew.Mode[i].value;
+                            getCheckRadio = (i + 1);
+                        }
+                    }
+                     
+                     
+					//_gaq.push(['_set', 'hitCallback', function () {top.location.href = "Login.aspx?Go="+ escape(escape(ParentUrl));} ]); 
+                    _gaq.push(['_trackEvent', 'All_login', 'E68_newlogin.aspx', '登入']);
+                    //_gaq.push(['_setCustomVar', 1, 'ac', document.loginmembernew.Login.value , getCheckRadio ]);
+				}
+
+                function DoSubmit()
+                { 
+			
+                    if(document.getElementById('Mode').checked==true)
+                    {
+                        document.loginmembernew.Mode.value=0;
+                    }
+                    else
+                    {
+                        document.loginmembernew.Mode.value=1;
+                    }
+			
+				
+					//document.loginmembernew.Mode.value=document.getElementById('Mode').value;
+					document.loginmembernew.Login.value=document.getElementById('Login').value;
+					document.loginmembernew.Password.value=document.getElementById('Password').value;
+					document.loginmembernew.EncryptKey.value=document.getElementById('EncryptKey').value;
+					document.loginmembernew.origurl.value=document.getElementById('origurl').value;
+					document.loginmembernew.orihash.value=document.getElementById('orihash').value;
+					document.loginmembernew.CheckPwd.value=document.getElementById('CheckPwd').value;
+					//document.loginmembernew.orihash=document.getElementById('orihash').value;
+					document.loginmembernew.origurl.value=location.href;
+				
+                    document.loginmembernew.OK.disabled =true;
+                    document.loginmembernew.Login.value = document.loginmembernew.Login.value.toUpperCase();
+                    
+                    var sCiti_no = document.loginmembernew.Login.value.trim();
+                    var sTemp = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                    
+                    if(sCiti_no.length <=6 || sCiti_no.length >=20)
+                    {
+                        alert("請輸入7個字元以上20個字元以下的英文字母及數字的登入帳號!");
+                        return false;
+                    }
+                    else
+                    {
+                        /*
+                        if(sCiti_no.length ==10 && sTemp.indexOf(sCiti_no.charAt(0))<0)
+                        {
+                            alert("請輸入完整的身份證字號!");
+                            return false;
+                        }*/
+                    }
+                    
+					if (document.loginmembernew.Login.value == '帳號/身分證字號')
+                    {
+                       document.getElementById('accounterror').innerHTML='請填寫帳號';
+					   document.getElementById('accounterror').style.color="#B10101";
+					   document.getElementById('accounterror').style.visibility="visible";
+					   return false;
+                    }
+                    if (document.loginmembernew.Password.value == '')
+                    {
+                       document.getElementById('pwderror').innerHTML='請填寫密碼';
+					   document.getElementById('pwderror').style.color="#B10101";
+					   document.getElementById('pwderror').style.visibility="visible";
+					   return false;
+                    }
+                    if (document.loginmembernew.CheckPwd.value == '驗證圖碼')
+                    { 
+                       document.getElementById('ErrorTable').innerHTML='請填寫驗證碼';
+					   document.getElementById('ErrorTable').style.color="#B10101";
+					   document.getElementById('ErrorTable').style.visibility="visible";
+					   return false;
+                    }
+                    
+					Login();
+                    document.loginmembernew.submit();
+                }
+
+                if("" !== "")
+                {
+                    if("" == "LoginDone")
+                    {
+                        //alert("parent.frames.length:"+parent.frames.length);
+                    }
+                    else
+                    {
+                        Sys_ShowElement("ErrorTable",true);
+                    }
+                }
+                
+                function clickRefresh()
+                {
+                    var id = Math.round((Math.random()) * 100000000);
+                    document.getElementById('CheckPWDIMG').src = 'CheckPWD.aspx?Mode=1&version=' + id;
+                    //document.getElementById('checkCodeImg').innerHTML= '<img id="CheckPWDIMG" src="CheckPWD.aspx">';
+                } 
+
+                clickRefresh();
+            </script>
+
+
+</head>
+
+<body>
+<div class="title" style="margin:0 auto; width:430px; position:relative; height:46px;"> <img height="46" width="430" src="images/logtitle1_03.png" style="z-index:100; position: absolute;"> <a href="javascript:close()" style="z-index:100; position: absolute; margin:10px 0 0 342px;"><img height="33" width="33" src="images/close.png" border="0"></a> </div>
+<div id="loginArea">
+<div class="loginblock2">
+      <h3>&#8226; 小提醒：請先選擇登入方式</h3>
+      <div id="tabs">
+        <ul class="nav">
+          <li><a href="#account" class="account current">帳號登入</a></li>
+          <li><a href="#idnumber" class="idnumber">身分證字號登入<br />
+<b>電視跨轉會員</b></a></li>
+        </ul>
+        <ul id="account">
+           <input type="text" id="Login" name="Login1" class="newbasicInput" maxlength="20" tabindex="1" size="32"  value="帳號" onfocus="clearvaluelogin()" onblur="returnvaluelogin()">
+        </ul>
+        <ul id="idnumber" class="hide">
+           <input type="text" id="Login" name="Login1" class="newbasicInput" maxlength="20" tabindex="1" size="32"  value="身分證字號" onfocus="clearvaluelogin()" onblur="returnvaluelogin()">
+        </ul>
+       
+      </div>
+    </div>
+  <div id="newlogin">
+    
+    <div class="loginblock">
+      <div id="pwderror" style="margin:0; display:inline;color:#B10101;visibility:hidden;" align="center">請填寫密碼/密碼錯誤</div>
+      <input type="text" id="Passwordshow" name="Passwordshow" class="newbasicInput" maxlength="20" size="32" tabindex="2" value="密碼" onfocus="changepwd()">
+      <input type="password" id="Password" name="Password1" class="newbasicInput" maxlength="20" size="32" tabindex="2" style="display:none;" onblur="showpwd()">
+      <div id="rigtdiv"> <a href="javascript:fgtpwd()" class="link-gray" id="forgetpwdd" style="text-decoration:none;">忘記密碼</a> </div>
+    </div>
+    <div class="loginblock">
+      <div id="ErrorTable" class="E68ErrorTable" style="visibility:hidden">驗證碼</div>
+      <div style="display:inline-flex;width:248px; ">
+        <input type="text" id="CheckPwd" name="CheckPwd1" class="newbasicInput2" maxlength="18" tabindex="3" size="13" value="驗證圖碼" onfocus="clearvalueCheckPwd()" onblur="returnvaluechkpwd()">
+        <img id="CheckPWDIMG" src="images/VCode.jpg" style="position:absolute;padding-top:5px;"> </div>
+      <div id="rigtdiv">
+                            <a id="changeCodeImg" href="javascript:clickRefresh();" style="text-decoration:none;color:#4D4D4D">更新圖碼</a>
+						</div>
+    </div>
+    <div id="E68NewLogindiv1" style="height:103px;display:inline-block;">
+      <input name="b" type="submit" id="loginbtn" onclick="DoSubmit();return false;" value="登入">
+      <!--<a href="#" id="loginbtn" class="btn_Red btn-register" onclick="DoSubmit();return false;" style="margin-top:25px;">登入</a>-->
+      <button name="fugologinbtn" id="fugologinbtn" onclick="cross();">電視會員轉網路會員 <!--<span class="tip" id="E68FugoMember" style="line-height:140%"> <img class="callout" src="../E68Images/Login/callout.gif">您曾在東森購物之電視通路消費，但從未登入東森購物網，請點此進行身份確認</span>--> </button>
+      <span style="display:block;float:left;color:#B10101;padding-left: 35px;">免費服務專線 0800-013-058</span> <a href="javascript:LoginToRegister()" id="forgetpwdd" style="text-decoration:none; text-align:right;float:right;display:block;padding-right:30px;*padding-right:30px;">
+      <div>我還不是會員</div>
+      </a> </div>
+  </div>
+  <div id="facebooklogin">
+    <div style="padding:10px 0 10px 0;">以其他方式登入</div>
+    <div id="fb-root" class=" fb_reset">
+      <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
+        <div>
+          <iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="https://s-static.ak.facebook.com/connect/xd_arbiter/LEdxGgtB9cN.js?version=40#channel=fa090f39&amp;origin=https%3A%2F%2Fwww.etmall.com.tw" style="border: none;"></iframe>
+        </div>
+      </div>
+      <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
+        <div></div>
+      </div>
+    </div>
+    <form name="newform3" method="post" action="">
+    </form>
+    
+    <!--input type="button" id="fbLoginBtn" value="Facebook登入" class="zocial facebook" style="position: static;width:110px;"--> 
+    <a href="#" id="fbLoginBtn" class="btn_FB gaTrackEventLogin" phd="black_fblogin"><img src="images/login_7.png" border="0"></a> </div>
+</div>
+</body>
+</html>
